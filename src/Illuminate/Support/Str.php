@@ -1,5 +1,7 @@
 <?php namespace Illuminate\Support;
 
+use Illuminate\Support\Patchwork\Utf8\ToAscii;
+
 class Str {
 
 	/**
@@ -17,7 +19,7 @@ class Str {
 	 */
 	public static function ascii($value)
 	{
-		return \Patchwork\Utf8::toAscii($value);
+		return ToAscii::transform($value);
 	}
 
 	/**
