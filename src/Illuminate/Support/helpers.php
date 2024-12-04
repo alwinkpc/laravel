@@ -592,6 +592,20 @@ if ( ! function_exists('data_get'))
 	}
 }
 
+if (! function_exists('decrypt')) {
+    /**
+     * Decrypt the given value.
+     *
+     * @param  string  $value
+     * @param  bool  $unserialize
+     * @return mixed
+     */
+    function decrypt($value, $unserialize = true)
+    {
+        return app('encrypter')->decrypt($value, $unserialize);
+    }
+}
+
 if ( ! function_exists('dd'))
 {
 	/**
@@ -618,6 +632,20 @@ if ( ! function_exists('e'))
 	{
 		return htmlentities($value, ENT_QUOTES, 'UTF-8', false);
 	}
+}
+
+if (! function_exists('encrypt')) {
+    /**
+     * Encrypt the given value.
+     *
+     * @param  mixed  $value
+     * @param  bool  $serialize
+     * @return string
+     */
+    function encrypt($value, $serialize = true)
+    {
+        return app('encrypter')->encrypt($value, $serialize);
+    }
 }
 
 if ( ! function_exists('ends_with'))
